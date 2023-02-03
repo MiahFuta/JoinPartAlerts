@@ -9,13 +9,13 @@ class Main {
 
     run() {
 
-        this.hide_all();
-
         auth.inspect_url();
 
     }
 
     init() {
+
+        this.hide_all();
 
         this.joined = new Array();
         this.parted = new Array();
