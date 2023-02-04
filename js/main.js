@@ -158,7 +158,7 @@ class Main {
         $('#popup-alert').css('display', 'block');
         $('#username').html(`${username} ${status} the Stream!`)
 
-        if (status) {
+        if (joined) {
             const audio = document.getElementById("join");
             audio.volume = 1;
             audio.play();
