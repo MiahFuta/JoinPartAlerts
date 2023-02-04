@@ -205,17 +205,16 @@ class Auth {
 	do_redirect(force_verify) {
 
 		location.href = this.get_redirect_url(force_verify);
-
+		
 	}
 
 	// NOTE Send Relog Link
 	send_relog_message() {
-		
-		$('#container').css('display', '');
-		$('#setup-info').css('display', '');
+
+        $('#title-info').html(`<h3>${document.title}</h3>`);
 
 		let setup_html = `<strong>Streamer Login Required!</strong><br>`;
-		setup_html += `<button id='login-button' onclick="return auth.do_redirect(false);">Click Here to Login to Twitch</button><br>`;
+		setup_html += `<button id='login-button' onclick="return auth.do_redirect(false);">Click Here to Login to Twitch</button>`;
 
 		let obs_html = `<div id='spacer'></div>`;
 		obs_html += `<strong>OBS Browser Source Detected!</strong><br><br>`;
@@ -225,6 +224,8 @@ class Auth {
 		if (main.is_obs()) setup_html += obs_html;
 
         $('#setup-info').html(setup_html);
+
+		main.show_all();
 
 	}
 

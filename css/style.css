@@ -6,7 +6,7 @@
 
 body,
 html {
-    background-color: #1E1E1E;
+    background-color: transparent;
     width: 100%;
 }
 
@@ -55,8 +55,12 @@ small {
     font-style: italic;
 }
 
+h3 {
+    font-size: x-large;
+}
+
 h4 {
-    font-size:x-large;
+    font-size: x-large;
     margin-bottom: 30px;
 }
 
@@ -83,10 +87,14 @@ h4 a {
     border: 1px solid #E300FF;
 }
 
+#title-info,
 #setup-info {
-    padding-top: 30px;
-    padding-bottom: 30px;
     border-bottom: 1px solid #e100ff78;
+}
+
+#setup-info {
+    padding-top: 40px;
+    padding-bottom: 30px;
 }
 
 #copyright {
