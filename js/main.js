@@ -158,6 +158,16 @@ class Main {
         $('#popup-alert').css('display', 'block');
         $('#username').html(`${username} ${status} the Stream!`)
 
+        if (status) {
+            const audio = document.getElementById("join");
+            audio.volume = 1;
+            audio.play();
+        } else {
+            const audio = document.getElementById("part");
+            audio.volume = 1;
+            audio.play();
+        }
+
         if (list.includes(username)) {
             list.splice(list.indexOf(username), 1);
         }
