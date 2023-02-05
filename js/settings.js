@@ -9,6 +9,7 @@ class Settings {
 		this.storage = this.storage_test();
 
 		if (this.storage_enabled()) {
+
 			this.set('client_id', 'yvijf618n141xrvgy5mu0gvedvhblr');
 			this.set('required_scopes', JSON.stringify([
 				'chat:edit',
@@ -16,9 +17,19 @@ class Settings {
 			]));
 			this.set('version', '0.0.1');
 			this.set('is_valid', false);
+
+			this.initSet('border', 'E300FF');
+			this.initSet('background', '252526');
+			this.initSet('font', 'E300FF');
+			this.initSet('sounds', 'true');
+
 		} else {
 			logger.error('You MUST Enable Cookies for this Site to Work Correctly!');
 		}
+	}
+
+	initSet(name, value) {
+		if (this.get(name) === null) this.set(name, value);
 	}
 
 	get(name) {

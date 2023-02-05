@@ -105,6 +105,8 @@ class Auth {
 
                 $(document).ready(function () {
                     main.init();
+					config.init();
+					config.generate_browser_source_url();
                 });
 
             });

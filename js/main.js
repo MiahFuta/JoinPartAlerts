@@ -1,5 +1,22 @@
 let main;
 
+function copyToClipboard() {
+
+    var readOnlyField = document.getElementById("readOnlyField");
+    var text = readOnlyField.value;
+
+    navigator.clipboard.writeText(text).then(
+        function() {
+            alert("URL Copied! Use CTRL+V to Paste!\n\n" + text);
+            console.log("Copying to clipboard was successful!");
+        },
+        function(err) {
+            console.error("Failed to copy text: ", err);
+        }
+    );
+    
+}
+
 class Main {
 
     client;
@@ -9,6 +26,7 @@ class Main {
     run() {
 
         main.hide_all();
+        config.load_args();
         auth.inspect_url();
 
     }
@@ -70,16 +88,20 @@ class Main {
         $('#container').css('display', 'none');
         $('#title-info').css('display', 'none');
         $('#setup-info').css('display', 'none');
+        $('#config-info').css('display', 'none');
+        $('#browser-info').css('display', 'none');
         $('html').css('background-color', 'transparent');
         $('body').css('background-color', 'transparent');
 
     }
 
-    show_all() {
+    show_all(setup = true) {
 
         $('#container').css('display', '');
         $('#title-info').css('display', '');
-        $('#setup-info').css('display', '');
+        if (setup) $('#setup-info').css('display', '');
+        if (!setup) $('#config-info').css('display', '');
+        if (!setup) $('#browser-info').css('display', '');
         $('html').css('background-color', '#1E1E1E');
         $('body').css('background-color', '#1E1E1E');
 
@@ -162,7 +184,10 @@ class Main {
         let audio = document.getElementById(joined ? "join" : "part");
         
         audio.volume = 1;
-        audio.play();
+
+        let sounds = settings.get('sounds') === "true"
+        if (sounds) audio.play();
+        
 
         if (list.includes(username)) list.splice(list.indexOf(username), 1);
 

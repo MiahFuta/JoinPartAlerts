@@ -88,11 +88,15 @@ h4 a {
 }
 
 #title-info,
-#setup-info {
+#setup-info,
+#browser-info,
+#config-info {
     border-bottom: 1px solid #e100ff78;
 }
 
-#setup-info {
+#setup-info,
+#browser-info,
+#config-info {
     padding-top: 40px;
     padding-bottom: 30px;
 }
