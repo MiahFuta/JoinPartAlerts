@@ -99,8 +99,10 @@ class Config {
         let browser_string = `<strong>OBS Browser Source Settings</strong><br><br>`;
         browser_string += `<input id="readOnlyField" type="text" readonly value="${browser_url}"><br><br>`;
         browser_string += `<button onclick="copyToClipboard()">Copy Browser Source URL to Clipboard</button><br><br>`;
-        browser_string += `<strong>Width &nbsp &rarr; &nbsp</strong> 1920<br><br>`;
-        browser_string += `<strong>Height &nbsp &rarr; &nbsp</strong> 1080`;
+        browser_string += `<strong>Width &nbsp &rarr; &nbsp</strong> 1920 &nbsp &nbsp `;
+        browser_string += `<strong>Height &nbsp &rarr; &nbsp</strong> 1080<br><br>`;
+        browser_string += `<strong>DISABLE &nbsp &rarr; &nbsp</strong> Shutdown source when not visible.<br><br>`;
+        browser_string += `<strong>DISABLE &nbsp &rarr; &nbsp</strong> Refresh browser when scene becomes active.`;
 
         $('#browser-info').html(browser_string);
     }
